@@ -29,7 +29,7 @@ class Movie
         $this->title = $title;
         $this->release_date = $release_date;
         $this->category_rate = $category_rate;
-        $this->rating = $this->getRating();
+        $this->setRating($category_rate);
     }
 
     public function setRating($category_rate)
@@ -51,7 +51,9 @@ class Movie
     }
 }
 
-$matrix = new Movie("Matrix", "1999", "T");
+$matrix = new Movie("Matrix", "1999", "14+");
+$signoreDegliAnelli = new Movie("The Lord of the Rings: The Fellowship of the Ring", "2001", "T");
 
 //$matrix->setRating("T");
 var_dump($matrix);
+var_dump($signoreDegliAnelli);
