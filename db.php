@@ -19,8 +19,8 @@ require __DIR__ . '/Models/Movie.php';
 $matrix = new Movie("Matrix", "1999", "14+");
 $signoreDegliAnelli = new Movie("The Lord of the Rings: The Fellowship of the Ring", "2001", "T");
 
-var_dump($matrix);
-var_dump($signoreDegliAnelli);
+//var_dump($matrix);
+//var_dump($signoreDegliAnelli);
 
 //Bonus:1
 $signoreDegliAnelli->addGenre("Avventura");
@@ -28,4 +28,4 @@ $signoreDegliAnelli->addGenre("Fantastico");
 $signoreDegliAnelli->addGenre("Azione");
 $signoreDegliAnelli->addGenre("Epico");
 
-var_dump($signoreDegliAnelli);
+//var_dump($signoreDegliAnelli);
