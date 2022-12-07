@@ -16,6 +16,7 @@ Creare un layout completo per stampare a schermo una lista di movies.
 <?php
 class Movie
 {
+    //Variabili
     public $title;
     public $release_date;
     public $language;
@@ -23,7 +24,9 @@ class Movie
     public $overview;
     public $rating = "";
     public $category_rate;
+    public $genres = [];
 
+    //Costruttore
     public function __construct($title, $release_date, $category_rate)
     {
         $this->title = $title;
@@ -32,6 +35,8 @@ class Movie
         $this->setRating($category_rate);
     }
 
+    //Metodo che restituisce il rating
+    //Setter
     public function setRating($category_rate)
     {
         if ($category_rate === "6+") {
@@ -44,16 +49,31 @@ class Movie
             $this->rating = "Film per tutti";
         }
     }
-
+    //Getter
     public function getRating()
     {
         return $this->rating;
+    }
+
+    //Bonus 1
+    public function addGenre($genre)
+    {
+        if (!in_array($genre, $this->genres)) {
+            $this->genres[] = $genre;
+        }
     }
 }
 
 $matrix = new Movie("Matrix", "1999", "14+");
 $signoreDegliAnelli = new Movie("The Lord of the Rings: The Fellowship of the Ring", "2001", "T");
 
-//$matrix->setRating("T");
 var_dump($matrix);
+var_dump($signoreDegliAnelli);
+
+//Bonus:1
+$signoreDegliAnelli->addGenre("Avventura");
+$signoreDegliAnelli->addGenre("Fantastico");
+$signoreDegliAnelli->addGenre("Azione");
+$signoreDegliAnelli->addGenre("Epico");
+
 var_dump($signoreDegliAnelli);
