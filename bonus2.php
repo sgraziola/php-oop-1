@@ -1,7 +1,9 @@
 <?php
 
-require __DIR__ . '/db.php';
+require __DIR__ . '/Models/Movie.php';
 
+$matrix = new Movie("Matrix", "1999", "14+");
+$signoreDegliAnelli = new Movie("The Lord of the Rings: The Fellowship of the Ring", "2001", "T");
 $moviesArray = [$matrix, $signoreDegliAnelli];
 
 
