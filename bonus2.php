@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/Models/Movie.php';
+require_once __DIR__ . '/Models/Movie.php';
 
 $matrix = new Movie("Matrix", "1999", "14+");
 $signoreDegliAnelli = new Movie("The Lord of the Rings: The Fellowship of the Ring", "2001", "T");
@@ -26,10 +26,13 @@ $moviesArray = [$matrix, $signoreDegliAnelli];
 
 <body>
     <?php
-    foreach ($moviesArray as $movie) {
-        echo "<h1> Titolo: " . $movie->title . "</h1>";
-        echo "<h2> Anno di Uscita: " . $movie->release_date . "</h2>";
-        echo "<h2> Classificazione: " . $movie->rating . "</h2>";
+    if (count($moviesArray) > 0) {
+
+        foreach ($moviesArray as $movie) {
+            echo "<h1> Titolo: " . $movie->title . "</h1>";
+            echo "<h2> Anno di Uscita: " . $movie->release_date . "</h2>";
+            echo "<h2> Classificazione: " . $movie->rating . "</h2>";
+        }
     }
     ?>
 </body>

@@ -45,7 +45,7 @@ class Movie
     public function addGenre($genre)
     {
         if (!in_array($genre, $this->genres)) {
-            $this->genres[] = $genre;
+            $this->genres = $genre;
         }
     }
 }
